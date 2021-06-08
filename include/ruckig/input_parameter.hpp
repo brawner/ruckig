@@ -58,13 +58,13 @@ public:
     Synchronization synchronization {Synchronization::Time};
     DurationDiscretization duration_discretization {DurationDiscretization::Continuous};
 
-    Vector current_position, current_velocity {}, current_acceleration {};
-    Vector target_position, target_velocity {}, target_acceleration {};
-    Vector max_velocity, max_acceleration, max_jerk;
-    std::optional<Vector> min_velocity, min_acceleration;
+    Vector current_position {}, current_velocity {}, current_acceleration {};
+    Vector target_position {}, target_velocity {}, target_acceleration {};
+    Vector max_velocity {}, max_acceleration {}, max_jerk {};
+    std::optional<Vector> min_velocity {}, min_acceleration {};
 
-    std::array<bool, DOFs> enabled;
-    std::optional<double> minimum_duration;
+    std::array<bool, DOFs> enabled {};
+    std::optional<double> minimum_duration {};
 
     InputParameter() {
         std::fill(enabled.begin(), enabled.end(), true);

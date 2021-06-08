@@ -33,10 +33,10 @@ class Trajectory {
     constexpr static double eps {std::numeric_limits<double>::epsilon()};
 
     //! Set of current profiles for each DoF
-    std::array<Profile, DOFs> profiles;
+    std::array<Profile, DOFs> profiles {};
 
-    double duration;
-    std::array<double, DOFs> independent_min_durations;
+    double duration {};
+    std::array<double, DOFs> independent_min_durations {};
 
     //! Is the trajectory phase synchronizable?
     static bool is_phase_synchronizable(

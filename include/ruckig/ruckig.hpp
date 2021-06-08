@@ -21,7 +21,7 @@ namespace ruckig {
 template<size_t DOFs, bool throw_error = false, bool return_error_at_maximal_duration = true>
 class Ruckig {
     //! Current input, only for comparison for recalculation
-    InputParameter<DOFs> current_input;
+    InputParameter<DOFs> current_input {};
 
     Result calculate(const InputParameter<DOFs>& input, OutputParameter<DOFs>& output) {
         if (!validate_input(input)) {
@@ -46,7 +46,7 @@ public:
     static constexpr size_t degrees_of_freedom {DOFs};
 
     //! Time step between updates (cycle time) in [s]
-    const double delta_time;
+    const double delta_time {};
 
     explicit Ruckig() { }
     explicit Ruckig(double delta_time): delta_time(delta_time) { }
